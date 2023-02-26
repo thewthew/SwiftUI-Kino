@@ -14,6 +14,9 @@
 		C9B4162C29AB696800879A4B /* MyKinoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4162B29AB696800879A4B /* MyKinoTests.swift */; };
 		C9B4163629AB696800879A4B /* MyKinoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4163529AB696800879A4B /* MyKinoUITests.swift */; };
 		C9B4163829AB696800879A4B /* MyKinoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4163729AB696800879A4B /* MyKinoUITestsLaunchTests.swift */; };
+		C9B4164529AB779700879A4B /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4164429AB779700879A4B /* MoviesViewModel.swift */; };
+		C9B4164829AB77D500879A4B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4164729AB77D500879A4B /* Movie.swift */; };
+		C9B4164B29ABCB0200879A4B /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B4164A29ABCB0200879A4B /* MovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		C9B4163129AB696800879A4B /* MyKinoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyKinoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B4163529AB696800879A4B /* MyKinoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKinoUITests.swift; sourceTree = "<group>"; };
 		C9B4163729AB696800879A4B /* MyKinoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyKinoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9B4164429AB779700879A4B /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		C9B4164729AB77D500879A4B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		C9B4164A29ABCB0200879A4B /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +100,13 @@
 		C9B4161929AB696600879A4B /* MyKino */ = {
 			isa = PBXGroup;
 			children = (
+				C9B4164929ABCAF600879A4B /* Views */,
+				C9B4164629AB77CC00879A4B /* Model */,
 				C9B4161A29AB696600879A4B /* MyKinoApp.swift */,
 				C9B4161C29AB696600879A4B /* ContentView.swift */,
 				C9B4161E29AB696700879A4B /* Assets.xcassets */,
 				C9B4162029AB696700879A4B /* Preview Content */,
+				C9B4164429AB779700879A4B /* MoviesViewModel.swift */,
 			);
 			path = MyKino;
 			sourceTree = "<group>";
@@ -127,6 +136,22 @@
 			path = MyKinoUITests;
 			sourceTree = "<group>";
 		};
+		C9B4164629AB77CC00879A4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9B4164729AB77D500879A4B /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9B4164929ABCAF600879A4B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9B4164A29ABCB0200879A4B /* MovieView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +162,7 @@
 				C9B4161329AB696600879A4B /* Sources */,
 				C9B4161429AB696600879A4B /* Frameworks */,
 				C9B4161529AB696600879A4B /* Resources */,
+				C963657F29AC085F009ECD8B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -252,12 +278,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C963657F29AC085F009ECD8B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C9B4161329AB696600879A4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B4164B29ABCB0200879A4B /* MovieView.swift in Sources */,
 				C9B4161D29AB696600879A4B /* ContentView.swift in Sources */,
+				C9B4164529AB779700879A4B /* MoviesViewModel.swift in Sources */,
+				C9B4164829AB77D500879A4B /* Movie.swift in Sources */,
 				C9B4161B29AB696600879A4B /* MyKinoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
